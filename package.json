@@ -1,0 +1,8 @@
+{
+    "name": "react-native-versai-template",
+    "version": "0.0.5",
+    "description": "React Native Versai Template",
+    "repository": "git@github.com:mithun1999/react-native-versai-template.git",
+    "author": "Mithun Kumar <mithun@versaihq.com>",
+    "license": "MIT"
+  }
