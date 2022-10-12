@@ -1,6 +1,5 @@
-require_relative '../../../node_modules/react-native/scripts/react_native_pods'
-require_relative '../../../node_modules/@react-native-community/cli-platform-ios/native_modules'
-require_relative '../../../node_modules/@nrwl/react-native/nx_post_install'
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
@@ -40,19 +39,19 @@ def shared_pods
   use_flipper!({ 'Flipper-Folly' => '2.6.10', 'Flipper' => '0.125.0', 'Flipper-RSocket' => '1.4.3' })
 end
 
-target 'Versai' do
+target 'mobile' do
   shared_pods
 end
 
-target 'VersaiDevelopment' do
+target 'mobileDevelopment' do
   shared_pods
 end
 
-target 'VersaiStaging' do
+target 'mobileStaging' do
   shared_pods
 end
 
-target 'VersaiProduction' do
+target 'mobileProduction' do
   shared_pods
 end
 
@@ -60,5 +59,4 @@ post_install do |installer|
   react_native_post_install(installer)
   flipper_post_install(installer)
   __apply_Xcode_12_5_M1_post_install_workaround(installer)
-  nx_post_install(installer)
 end
